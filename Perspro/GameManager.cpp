@@ -1,8 +1,8 @@
-#include "Game.h"
+#include "GameManager.h"
 #include <iostream>
 #include <string>
 using namespace std;
-void Game::TextRpg()
+void GameManager::TextRpg()
 {
 	player.PlayerPosx = 1;
 	player.PlayerPosy = 1;
@@ -11,37 +11,25 @@ void Game::TextRpg()
 		printMap(StageTrigger, player.PlayerPosx, player.PlayerPosy);
 		printf("현재 체력 : %d, 공격력 : %d ,회복용 오브 : %d, 돈 : %d\n",
 			player.GetHP(), player.GetATK(), player.Getorb(), player.GetGold());
-		printf("이동 : wasd, 회복 : h, 인벤토리 : i, 아이템 사용 : e\n");
+		printf("이동 : wasd, 인벤토리 : i, 아이템 사용 : u\n");
 		printf("입력 : ");
 		cin >> move;
-		if (move == "h")
-		{
-			if (player.Getorb() > 0)
-			{
-				printf("%d의 체력 회복 ", player.Getorb());
-				player.PlayerHealing(player.Getorb());
-				player.Sethealorb(0);
-			}
-			else
-			{
-				printf("오브 없음\n");
-				system("pause");
-			}
-		}
-		else if (move == "i")
+		if (move == "i"|| move == "I")
 		{
 			inven.PrintInventory();
+			system("pause");
+
 		}
-		else if (move == "e")
+		else if (move == "u"|| move == "U")
 		{
-			inven.UseItem();
+			inven.WhatUse();
 		}
 		else
 		{
 			player.move(move, StageTrigger);
 			if (IsShop(StageTrigger, player.PlayerPosx, player.PlayerPosy))
 			{
-
+				inven.OpenShop();
 			}
 			else if (IsPotal(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
 				Nextstage();
@@ -50,12 +38,15 @@ void Game::TextRpg()
 			else if (IsBoss(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
 				
 			}
+			else if (IsHidden(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
+
+			}
 		}
 		system("cls");
 	}
 }
 
-void Game::Nextstage()
+void GameManager::Nextstage()
 {
 	if (StageTrigger < MAxstage)
 	{
@@ -66,11 +57,11 @@ void Game::Nextstage()
 	system("cls");
 }
 
-void Game::WhereStege()
+void GameManager::WhereStege()
 {
 
 }
 
-Game::~Game()
+GameManager::~GameManager()
 {
 }

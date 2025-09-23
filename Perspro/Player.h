@@ -1,7 +1,7 @@
 #pragma once
 #include"Actor.h"
 #include "StageMap.h"
-class PlayerManager : public Actor, public StageMap
+class Player : public Actor, public StageMap
 {
 public:
 	StageMap stagemap;
@@ -11,8 +11,8 @@ public:
 	void PlayerDmagetaken(int Dam);
 	void PlayerHealing(int Heal);
 	void PlayerGetMoney(int gold);
-	PlayerManager()=default;
-	PlayerManager(const char* InName, int HP, int Dam);
-	~PlayerManager();
+	Player()=default;
+	Player(const char* InName, int HP, int Dam);
+	~Player();
 };
 

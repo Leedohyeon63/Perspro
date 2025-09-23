@@ -125,10 +125,10 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Battle.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Perspro.cpp" />
-    <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shop.cpp" />
     <ClCompile Include="StageMap.cpp" />
   </ItemGroup>
@@ -137,8 +137,8 @@
     <ClInclude Include="Battle.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="Inventory.h" />
-    <ClInclude Include="PlayerManager.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Shop.h" />
     <ClInclude Include="StageMap.h" />
   </ItemGroup>

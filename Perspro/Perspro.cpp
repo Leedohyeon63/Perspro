@@ -1,7 +1,7 @@
-﻿#include"Game.h"
+﻿#include"GameManager.h"
 int main()
 {
-	Game stg;
+	GameManager stg;
 	stg.TextRpg();
 	return 0;
 }

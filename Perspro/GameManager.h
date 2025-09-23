@@ -1,19 +1,19 @@
 #pragma once
-#include "PlayerManager.h"
+#include "Player.h"
 #include "Inventory.h"
-class Game : public PlayerManager, public Inventory
+class GameManager : public Player
 {
 public:
 	void TextRpg();
 	void Nextstage();
 	void WhereStege();
-	Game()=default;
-	~Game();
+	GameManager()=default;
+	~GameManager();
 private:
 	int StageTrigger = 1;
 	const int MAxstage = 5;
 	string move;
-	PlayerManager player = PlayerManager("플레이어", 100, 20);
+	Player player = Player("플레이어", 100, 20);
 	Inventory inven;
 };
 

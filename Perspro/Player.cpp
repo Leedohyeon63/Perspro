@@ -1,6 +1,6 @@
-#include "PlayerManager.h"
+#include "Player.h"
 
-void PlayerManager::move(string move, int stage)
+void Player::move(string move, int stage)
 {
 	if ((move == "d" || move == "D")&&stagemap.Iswall(stage, PlayerPosx, PlayerPosy, Way::Right))
 	{
@@ -25,23 +25,23 @@ void PlayerManager::move(string move, int stage)
 }
 
 
-void PlayerManager::PlayerDmagetaken(int Dam)
+void Player::PlayerDmagetaken(int Dam)
 {
 	SetDamgetaken(Dam);
 }
 
-void PlayerManager::PlayerHealing(int Heal)
+void Player::PlayerHealing(int Heal)
 {
 	SetHealing(Heal);
 }
-void PlayerManager::PlayerGetMoney(int gold)
+void Player::PlayerGetMoney(int gold)
 {
 	SetGold(gold);
 }
-PlayerManager::PlayerManager(const char* InName, int HP, int Dam)
+Player::Player(const char* InName, int HP, int Dam)
 	:Actor(InName, HP, Dam)
 {
 }
-PlayerManager::~PlayerManager()
+Player::~Player()
 {
 }
