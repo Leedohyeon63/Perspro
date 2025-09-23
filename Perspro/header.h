@@ -10,4 +10,5 @@
 #include<string.h>
 #include <fstream>
 #include <stdint.h>
+#include <cstdlib>
 using namespace std;

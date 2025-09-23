@@ -125,17 +125,21 @@
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Battle.cpp" />
-    <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Perspro.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="Shop.cpp" />
     <ClCompile Include="StageMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="header.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Stage.h" />
+    <ClInclude Include="Inventory.h" />
+    <ClInclude Include="PlayerManager.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Shop.h" />
     <ClInclude Include="StageMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

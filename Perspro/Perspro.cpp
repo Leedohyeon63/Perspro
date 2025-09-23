@@ -1,9 +1,8 @@
-﻿#include"Stage.h"
+﻿#include"Game.h"
 int main()
 {
-	Stage st;
-	st.TextRpg();
-
-
+	Game stg;
+	stg.TextRpg();
+	return 0;
 }
 
