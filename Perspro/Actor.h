@@ -9,6 +9,7 @@ public:
 	inline int GetATK() const { return Actordamge; }
 	inline int Getorb() const { return healorb; }
 	inline int GetGold() const { return Gold; }
+	inline int GetLevel() const { return MonsterLevel; }
 	inline bool IsAlive() { return GetHP() > 0; }
 	virtual void AppleyDamge(Battle* InTarget) override;
 	virtual void Takedamge(int InDamge) override;
@@ -29,6 +30,11 @@ public:
 	{
 		Actordamge = Dam;
 	}
+	inline void SetGold(int gold)
+	{
+		Gold = gold;
+	}
+
 protected:
 	string Name;
 	int ActorHP = 0, Actordamge = 0, MonsterLevel=0;
@@ -42,11 +48,7 @@ protected:
 	{
 		ActorHP += heal;
 	}
-	inline void SetGold(int gold)
-	{
-		Gold += gold;
-	}
-
+	
 	inline void SetHealth(int InHealth)
 	{
 		if (InHealth > MaxHealth)

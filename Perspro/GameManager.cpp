@@ -8,7 +8,7 @@ void GameManager::TextRpg()
 	player = Player("ÇÃ·¹ÀÌ¾î", 500, 22, 5);
 	player.PlayerPosx = 1;
 	player.PlayerPosy = 1;
-	while (true)
+	while (!Isdead)
 	{
 		int BattleTrigger = rand() % 10 + 1;
 		map.printMap(StageTrigger, player.PlayerPosx, player.PlayerPosy);
@@ -62,6 +62,8 @@ void GameManager::TextRpg()
 		system("cls");
 
 	}
+	printf("ÇÃ·¹ÀÌ¾î »ç¸Á..\n");
+	return;
 }
 
 void GameManager::Nextstage()
@@ -77,22 +79,41 @@ void GameManager::Nextstage()
 
 void GameManager::BattleEvent(int Stage)
 {
-	currentMonster = CreateMonster::SpawnMonster(Stage);
-	currentMonster->ShowInfo();
-	auto result = battleManager.MonsterBattle(&player, currentMonster);
-
+	CurrentMonster = CreateMonster::SpawnMonster(Stage);
+	CurrentMonster->ShowInfo();
+	auto Result = battleManager.MonsterBattle(&player, CurrentMonster);
+	if (Result==BattleResult::WIN)
+	{
+		printf("ÇÃ·¹ÀÌ¾î ½Â¸®\n");
+		printf("¿Àºê %d°³, °ñµå %d¿ø È¹µæ\n",Stage*10, Stage*30);
+		player.Sethealorb(player.Getorb()+ Stage * 10);
+		player.SetGold(player.GetGold() + Stage * 30);
+	}
+	else if (Result == BattleResult::RUN)
+	{
+		printf("µµ¸Á°¬½À´Ï´Ù.\n");
+	}
+	else if (Result == BattleResult::LOSE)
+	{
+		Isdead = true;
+		return;
+	}
+	else
+	{
+		return;
+	}
 }
 
 GameManager::GameManager()
-	: currentMonster(nullptr)
+	: CurrentMonster(nullptr)
 {
 }
 
 GameManager::~GameManager()
 {
-	if (currentMonster != nullptr)
+	if (CurrentMonster != nullptr)
 	{
-		delete currentMonster;
-		currentMonster = nullptr;
+		delete CurrentMonster;
+		CurrentMonster = nullptr;
 	}
 }

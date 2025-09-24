@@ -5,8 +5,6 @@ void Player::move(string move, int stage)
 	if ((move == "d" || move == "D")&&stagemap.Iswall(stage, PlayerPosx, PlayerPosy, Way::Right))
 	{
 		PlayerPosx++;
-		Sethealorb(Getorb()+4);
-		PlayerGetMoney(6);
 	}
 	else if ((move == "a" || move == "A") && stagemap.Iswall(stage, PlayerPosx, PlayerPosy, Way::Left))
 	{

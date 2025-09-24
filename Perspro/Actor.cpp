@@ -8,12 +8,13 @@ void Actor::Takedamge(int InDamge)
 {
 	SetHealth(GetHP() - InDamge);
 
-	printf("%s가 %d의 피해를 입었습니다.\n", Name.c_str(), InDamge);
-	printf("(%d/%d)\n", GetHP(), MaxHealth);
+	printf("%s이 %d의 피해를 입었습니다.\n", Name.c_str(), InDamge);
+	printf("남은 체력(%d/%d)\n", GetHP(), MaxHealth);
+	printf("==============================\n");
 
 	if (!IsAlive())
 	{
-		printf("%s가 죽었습니다.\n", Name.c_str());
+		printf("%s이 죽었습니다.\n", Name.c_str());
 	}
 }
 void Actor::Useskill(Actor* InTarget)

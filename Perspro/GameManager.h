@@ -18,12 +18,13 @@ public:
 	GameManager();
 	~GameManager();
 private:
+	bool Isdead = false;
 	int StageTrigger = 1;
 	const int MAxstage = 5;
 	string move;
 	Player player;
 	StageMap map;
-	Actor* currentMonster = nullptr;
+	Actor* CurrentMonster = nullptr;
 	Inventory inven;
 	Shop shop;
 	BattleManager battleManager;
