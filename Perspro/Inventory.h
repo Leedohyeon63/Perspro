@@ -2,19 +2,23 @@
 #include "Shop.h"
 #include "header.h"
 #include "Player.h"
+
 #include<vector>
 
-class Inventory : public Shop
+class Inventory
 {
 public:
 	void PrintInventory();
-	void UseItem(string Choise);
-	void WhatUse();
+	void UseItem(string Choise, Player& player);
+	void PushItem(string item);
+	void DeleteItem(string item);
+	void PushConsumablesItem(string item);
+	void DeleteConsumablesItem(string item);
+	void WhatUse(Player& player);
 protected:
-	Player player;
 	int Maxinven = 10;
 	std::vector<string> InventoryList = {"埔带飘", "措给"};
-	std::vector<string> ConsumablesList = { "坷宏", "何剿标"};
+	std::vector<string> ConsumablesList = {"何剿标"};
 
 };
 

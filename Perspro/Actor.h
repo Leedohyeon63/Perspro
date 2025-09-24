@@ -13,8 +13,9 @@ public:
 	virtual void AppleyDamge(Battle* InTarget) override;
 	virtual void Takedamge(int InDamge) override;
 	virtual void Useskill(Actor* InTarget);
-	Actor() : Name(""), ActorHP(0), Actordamge(0), MaxHealth(0) {}
-	Actor(const char* InName, int HP, int Dam);
+	virtual void ShowInfo() const;
+	Actor() : Name(""), ActorHP(0), Actordamge(0), MaxHealth(0), MonsterLevel(0){}
+	Actor(const char* InName, int HP, int Dam,int Level);
 	~Actor();
 	inline void Sethealorb(int orb)
 	{
@@ -30,7 +31,7 @@ public:
 	}
 protected:
 	string Name;
-	int ActorHP = 0, Actordamge = 0;
+	int ActorHP = 0, Actordamge = 0, MonsterLevel=0;
 	int MaxHealth = 0, healorb = 0, Gold = 0;
 
 	inline void SetDamgetaken(int Dam)

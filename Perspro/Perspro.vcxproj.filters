@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="헤더 파일">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -12,6 +8,28 @@
     <Filter Include="리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="보스">
+      <UniqueIdentifier>{93f2bac7-51f9-4aef-b993-dd21ac72d821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="몬스터">
+      <UniqueIdentifier>{19e95313-3116-4da6-a9f9-33100adf4fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="몬스터\1스테이지">
+      <UniqueIdentifier>{74d7081d-921c-4ba4-9d20-b35ab4cc3d7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="몬스터\2스테이지">
+      <UniqueIdentifier>{39be9405-e706-4bd1-acb1-8059f6c89f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="몬스터\3스테이지">
+      <UniqueIdentifier>{682aa1d5-f1d1-46dd-921d-38499e5e0986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="몬스터\4스테이지">
+      <UniqueIdentifier>{6dc01a9a-8717-4dd5-ba48-e33e00fab2ff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +57,66 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Mossgrub.cpp">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="MassiveMossgrub.cpp">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Mossmir.cpp">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Beastfly.cpp">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Flintbeetle.cpp">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Tarmite.cpp">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="LastClaw.cpp">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Lavalug.cpp">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="Cragglite.cpp">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="ElderPilgrim.cpp">
+      <Filter>몬스터\4스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="PilgrimHulk.cpp">
+      <Filter>몬스터\4스테이지</Filter>
+    </ClCompile>
+    <ClCompile Include="GroaltheGreat.cpp">
+      <Filter>보스</Filter>
+    </ClCompile>
+    <ClCompile Include="MotherSilk.cpp">
+      <Filter>보스</Filter>
+    </ClCompile>
+    <ClCompile Include="Nyleth.cpp">
+      <Filter>보스</Filter>
+    </ClCompile>
+    <ClCompile Include="TheUnravelled.cpp">
+      <Filter>보스</Filter>
+    </ClCompile>
+    <ClCompile Include="Trobbio.cpp">
+      <Filter>보스</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateMonster.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -63,6 +141,69 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Mosterlist.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Mossmir.h">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Mossgrub.h">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="MassiveMossgrub.h">
+      <Filter>몬스터\1스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Beastfly.h">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Flintbeetle.h">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Tarmite.h">
+      <Filter>몬스터\2스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="LastClaw.h">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Lavalug.h">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="Cragglite.h">
+      <Filter>몬스터\3스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="ElderPilgrim.h">
+      <Filter>몬스터\4스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="PilgrimHulk.h">
+      <Filter>몬스터\4스테이지</Filter>
+    </ClInclude>
+    <ClInclude Include="GroaltheGreat.h">
+      <Filter>보스</Filter>
+    </ClInclude>
+    <ClInclude Include="MotherSilk.h">
+      <Filter>보스</Filter>
+    </ClInclude>
+    <ClInclude Include="Nyleth.h">
+      <Filter>보스</Filter>
+    </ClInclude>
+    <ClInclude Include="Trobbio.h">
+      <Filter>보스</Filter>
+    </ClInclude>
+    <ClInclude Include="TheUnravelled.h">
+      <Filter>보스</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateMonster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

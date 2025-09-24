@@ -20,8 +20,18 @@ void Actor::Useskill(Actor* InTarget)
 {
 	printf("몬스터가 스킬을 사용합니다\n");
 }
-Actor::Actor(const char* InName, int HP, int Dam)
-	:Name(InName), ActorHP(HP), Actordamge(Dam), MaxHealth(HP)
+
+void Actor::ShowInfo() const
+{
+	printf("이름 : %s\n", Name.c_str());
+	printf("체력 : %d / %d\n", ActorHP, MaxHealth);
+	printf("공격력 : %d\n", Actordamge);
+	printf("레벨 : %d\n", MonsterLevel);
+}
+
+
+Actor::Actor(const char* InName, int HP, int Dam, int Level)
+	:Name(InName), ActorHP(HP), Actordamge(Dam), MaxHealth(HP), MonsterLevel(Level)
 {
 
 }
