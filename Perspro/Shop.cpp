@@ -2,7 +2,7 @@
 #include <iostream>
 Shop::Shop()
 {
-    ForSaleItems.push_back({ "회복물약", "체력을 50 회복합니다.", 20});
+    ForSaleItems.push_back({ "회복물약","전투", "체력을 50 회복합니다.", 20});
 }
 
 void Shop::OpenShop(Player* player, Inventory* inventory)
@@ -47,7 +47,7 @@ void Shop::SellItem(int itemIndex, Player* player, Inventory* inventory)
     if (player->GetGold() >= ItemBuy.Price)
     {
         player->PlayerGetMoney(-ItemBuy.Price);
-        inventory->PushItem(ItemBuy.Name.c_str()); 
+        inventory->PushItem(ItemBuy.Name.c_str(), ItemBuy.Type); 
         printf("\n%s을(를) 구매했습니다..\n", ItemBuy.Name.c_str());
     }
     else

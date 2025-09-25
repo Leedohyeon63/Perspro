@@ -9,10 +9,9 @@ class Inventory
 public:
 	void PrintInventory();
 	void UseItem(string Choise, Player& player);
-	void PushItem(string item);
+	void PushItem(string item, string type);
 	bool FindItem(string item);
 	void DeleteItem(string item);
-	void PushConsumablesItem(string item);
 	void DeleteConsumablesItem(string item);
 	void WhatUse(Player& player);
 	void BattleUse(Player& player);

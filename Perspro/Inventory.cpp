@@ -4,6 +4,11 @@
 void Inventory::PrintInventory()
 {
 	printf("인벤토리 내역\n");
+	printf("==============장착중==============\n");
+	for (int i = 0; i < EquipList.size(); i++)
+	{
+		cout << "(" << EquipList[i] << ")" << " ";
+	}
 	printf("==============소모품==============\n");
 	for (int i = 0; i < InventoryList.size(); i++)
 	{
@@ -111,10 +116,24 @@ void Inventory::UseItem(string Choise, Player& player)
 	return;
 }
 
-void Inventory::PushItem(string item)
+void Inventory::PushItem(string item, string type)
 {
-	InventoryList.push_back(item);
-	return;
+	if (type == "전투")
+	{
+		BattleList.push_back(item);
+		return;
+	}
+	else if (type == "소지품")
+	{
+		InventoryList.push_back(item);
+		return;
+	}
+	else if (type == "소모품")
+	{
+		ConsumablesList.push_back(item);
+		return;
+	}
+	
 }
 
 bool Inventory::FindItem(string item)
@@ -139,13 +158,6 @@ void Inventory::DeleteItem(string item)
 		}
 	}
 	return;
-}
-
-void Inventory::PushConsumablesItem(string item)
-{
-	ConsumablesList.push_back(item);
-	return;
-
 }
 
 void Inventory::DeleteConsumablesItem(string item)

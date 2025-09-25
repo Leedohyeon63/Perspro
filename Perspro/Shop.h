@@ -5,6 +5,7 @@
 struct Item
 {
     std::string Name;
+    std::string Type;
     std::string Description;
     int Price;
 };
