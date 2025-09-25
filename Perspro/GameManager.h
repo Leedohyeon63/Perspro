@@ -21,7 +21,7 @@ public:
 	~GameManager();
 private:
 	bool Isdead = false;
-	int StageTrigger = 5;
+	int StageTrigger = 1;
 	const int MAxstage = 5;
 	bool BossClear = false;
 	string move;

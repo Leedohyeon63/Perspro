@@ -80,18 +80,6 @@ bool StageMap::IsBoss(int Mapnum, int x, int y)
 	}
 	return false;
 }
-
-bool StageMap::IsHidden(int Mapnum, int x, int y)
-{
-	int (*Stage)[30] = nullptr;
-	Stage = Whereis(Mapnum);
-	if (Stage[y][x] == static_cast<int>(Composition::HiddenPotal))
-	{
-		return true;
-	}
-	return false;
-}
-
 int(*StageMap::Whereis(int Mapnum))[30]
 {
 	switch (Mapnum)
@@ -119,7 +107,7 @@ void StageMap::printMap(int Mapnum, int Playerx, int Playery)
 	Stage = Whereis(Mapnum);
 
 
-	for (size_t i = 0; i < 10; i++)
+	for (size_t i = 0; i < 15; i++)
 	{
 		for (size_t k = 0; k < 30; k++)
 		{
@@ -143,6 +131,14 @@ void StageMap::printMap(int Mapnum, int Playerx, int Playery)
 			else if (t == Composition::Boss)
 			{
 				printf("B ");
+			}
+			else if (t == Composition::Void)
+			{
+				printf("  ");
+			}
+			else if (t == Composition::Shop)
+			{
+				printf("S ");
 			}
 		}
 		printf("\n");

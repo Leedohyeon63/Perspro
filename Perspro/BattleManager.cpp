@@ -162,16 +162,16 @@ bool BattleManager::MonsterFight(Player* player, Actor* monster, Inventory* inve
     while (player->IsAlive() && monster->IsAlive())
     {
         printf("플레이어 공격\n");
+		player->ActorEffects();
         monster->Takedamge(player->GetATK());
-
         if (!monster->IsAlive())
         {
             return true;
         }
 
         printf("몬스터 공격\n");
+		monster->ActorEffects();
         MonsterTurnCounter++; 
-
         if (monster->GetLevel() > 3)
         {
             if (MonsterTurnCounter % 2 == 0)

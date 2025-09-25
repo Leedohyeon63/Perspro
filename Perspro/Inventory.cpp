@@ -14,6 +14,11 @@ void Inventory::PrintInventory()
 	{
 		cout << "(" << ConsumablesList[i] << ")" << " ";
 	}
+	printf("\n==============전투도구==============\n");
+	for (int i = 0; i < BattleList.size(); i++)
+	{
+		cout << "(" << BattleList[i] << ")" << " ";
+	}
 	printf("\n");
 }
 
@@ -35,38 +40,72 @@ void Inventory::WhatUse(Player& player)
 	}
 	return;
 }
+void Inventory::BattleUse(Player& player)
+{
+	string Choise;
+	printf("사용할 아이템 선택\n");
+	printf("==============전투도구=============\n");
+	for (int i = 0; i < BattleList.size(); i++)
+	{
+		cout << "(" << BattleList[i] << ")" << " ";
+	}
+	printf("\n");
+	cin >> Choise;
+	if (find(BattleList.begin(), BattleList.end(), Choise) != BattleList.end())
+	{
+		UseItem(Choise, player);
+	}
+	return;
+}
 
 void Inventory::BossReward(Actor* Boss)
 {
 	if (Boss->GetName()=="토르비오")
 	{
 		InventoryList.push_back("화려한 심장");
-		ConsumablesList.push_back("화려한 깃털");
+		ConsumablesList.push_back("화려한깃털");
 	}
 	else if (Boss->GetName() == "나이레스")
 	{
 		InventoryList.push_back("숲의 심장");
-		ConsumablesList.push_back("자연의 정수");
+		ConsumablesList.push_back("자연의정수");
 	}
 	else if (Boss->GetName() == "위대한 그롤")
 	{
 		InventoryList.push_back("역겨운 심장");
-		ConsumablesList.push_back("영혼 주머니");
+		ConsumablesList.push_back("영혼주머니");
 	}
 	else if (Boss->GetName() == "위대한 어머니 실크")
 	{
 		InventoryList.push_back("실로 만든 심장");
-		ConsumablesList.push_back("창백한 발톱 조각");
+		ConsumablesList.push_back("창백한발톱조각");
 	}
 }
 
 void Inventory::UseItem(string Choise, Player& player)
 {
-	if (Choise == "부싯깃")
+	if (Choise == "화려한깃털")
 	{
-		player.PlayerDmageSet(player.GetATK()+10);
-		player.PlayerDmagetaken(20);
-		printf("데미지 %d.\n", player.GetATK());
+		player.PlayerDmageSet(player.GetATK() + FeatherATk);
+		DeleteConsumablesItem(Choise);
+	}
+	else if (Choise == "자연의정수")
+	{
+		player.SetMaxHealth(player.GetMaxHealth() + NatureHealth);
+		player.PlayerHealing(1000);
+		DeleteConsumablesItem(Choise);
+	}
+	else if (Choise == "영혼주머니")
+	{
+		player.SetMaxHealth(player.GetMaxHealth() + SoulHealth);
+		player.PlayerHealing(1000);
+		DeleteConsumablesItem(Choise);
+	}
+	else if (Choise == "창백한발톱조각")
+	{
+		player.PlayerDmageSet(player.GetATK() + SilkATK);
+		player.SetMaxHealth(player.GetMaxHealth() + SilkHealth);
+		player.PlayerHealing(1000);
 		DeleteConsumablesItem(Choise);
 	}
 	return;
@@ -80,7 +119,7 @@ void Inventory::PushItem(string item)
 
 bool Inventory::FindItem(string item)
 {
-	for (vector<string>::iterator iter = InventoryList.begin(); iter != InventoryList.end(); iter++)
+	for (vector<string>::iterator iter = EquipList.begin(); iter != EquipList.end(); iter++)
 	{
 		if (*iter == item)
 		{

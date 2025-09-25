@@ -8,6 +8,7 @@ public:
 	inline const std::string GetName() const { return Name; }
 	inline int GetHP() const { return ActorHP; }
 	inline int GetATK() const { return Actordamge; }
+	inline int GetMaxHealth() const { return MaxHealth; }
 	inline int Getorb() const { return healorb; }
 	inline int GetGold() const { return Gold; }
 	inline int GetLevel() const { return MonsterLevel; }
@@ -19,6 +20,9 @@ public:
 	virtual void ShowInfo() const;
 	void ActorEffects();
 	void ActorHealBlock(int turns);
+	void ActorPoison(int turns, int DamagePerTurn);
+	void ActorDamgeBuff(int turns, int BuffAmount);
+	void ActorHealthRegen(int turns, int RegenPerTurn);
 	bool IsHealBlocked() const;
 	bool CantHeal = false;
 	int HealBlockedTurns = 0;
@@ -26,6 +30,7 @@ public:
 	Actor(const char* InName, int HP, int Dam,int Level);
 	~Actor();
 	inline void Sethealorb(int orb)
+
 	{
 		healorb = orb;
 		if (healorb < 0)
@@ -40,6 +45,7 @@ public:
 		{
 			Actordamge = 1;
 		}
+		printf("데미지가 %d로 증가.\n", GetATK());
 	}
 	inline void SetGold(int gold)
 	{
@@ -49,12 +55,24 @@ public:
 			Gold = 0;
 		}
 	}
-
+	inline void SetMaxHealth(int InHealth)
+	{
+		MaxHealth = InHealth;
+		printf("최대체력이 %d로 증가.\n", GetMaxHealth());
+	}
 protected:
 	string Name;
 	int ActorHP = 0, Actordamge = 0, MonsterLevel=0;
 	int MaxHealth = 0, healorb = 0, Gold = 0;
-
+	bool Poisoned = false;
+	int PoisonTurns = 0;
+	int PoisonDamagePerTurn = 0;
+	bool DamageBuffed = false;
+	int DamageBuffTurns = 0;
+	int DamageBuffAmount = 0;
+	bool Regenerating = false;
+	int HealthRegenTurns = 0;
+	int HealthRegenAmount = 0;
 	inline void SetDamgetaken(int Dam)
 	{
 		ActorHP -= Dam;
@@ -80,5 +98,6 @@ protected:
 			ActorHP = InHealth;
 		}
 	}
+
 };
 

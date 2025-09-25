@@ -17,5 +17,7 @@ private:
     int BladeHit = 2;
     const int SeedDamge = 4;
     int SeedHit = 5;
-    const int BloomDamge = 30;
+    const int BloomDamge = 20;
+    const int BloomPoison = 5;
+    const int BloomPoisonHit = 2; 
 };

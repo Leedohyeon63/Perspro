@@ -6,8 +6,8 @@ void GameManager::TextRpg()
 {
 	srand(static_cast<unsigned int>(time(NULL)));
 	player = Player("플레이어", 5000, 10, 5);
-	player.PlayerPosx = 1;
-	player.PlayerPosy = 5;
+	player.PlayerPosx = 2;
+	player.PlayerPosy = 2;
 	while (!Isdead)
 	{
 		int BattleTrigger = rand() % 10 + 1;
@@ -39,7 +39,7 @@ void GameManager::TextRpg()
 			player.move(move, StageTrigger);
 			if (map.IsShop(StageTrigger, player.PlayerPosx, player.PlayerPosy))
 			{
-				shop.OpenShop();
+				shop.OpenShop(&player, &inven);
 			}
 			else if (map.IsPotal(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
 				if (BossClear)
@@ -53,7 +53,6 @@ void GameManager::TextRpg()
 					printf("보스 클리어 필요\n");
 					system("pause");
 				}
-
 			}
 			else if (map.IsBoss(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
 				if (!BossClear)
@@ -66,9 +65,6 @@ void GameManager::TextRpg()
 					printf("이미 클리어 한 보스다.\n");
 					system("pause");
 				}
-			}
-			else if (map.IsHidden(StageTrigger, player.PlayerPosx, player.PlayerPosy)) {
-
 			}
 			else if (StageTrigger!=5&&BattleTrigger < 3)
 			{
@@ -90,8 +86,8 @@ void GameManager::Nextstage()
 	{
 		StageTrigger++;
 	}
-	player.PlayerPosx = 1;
-	player.PlayerPosy = 1;
+	player.PlayerPosx = 2;
+	player.PlayerPosy = 2;
 	system("cls");
 }
 

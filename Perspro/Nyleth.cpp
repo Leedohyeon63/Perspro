@@ -50,5 +50,6 @@ void Nyleth::ThrowSeed(Actor* InTarget, Inventory* PInventory)
 void Nyleth::Bloom(Actor* InTarget, Inventory* PInventory)
 {
 	printf("나이레스가 폭발을 시전합니다.\n");
+	InTarget->ActorPoison(BloomPoisonHit, BloomPoison);
 	InTarget->Takedamge(BloomDamge);
 }
