@@ -26,6 +26,7 @@ void Player::move(string move, int stage)
 
 
 
+
 void Player::PlayerDmagetaken(int Dam)
 {
 	SetDamgetaken(Dam);

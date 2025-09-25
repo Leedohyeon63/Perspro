@@ -4,7 +4,7 @@
 class MassiveMossgrub : public Monster
 {
 public:
-	MassiveMossgrub() :Monster("거대 이끼유충", 150, 15, 1) {}
+	MassiveMossgrub() :Monster("거대 이끼유충", 150, 12, 1) {}
 
 };
 

@@ -13,6 +13,7 @@
 
 #include "ElderPilgrim.h"
 #include "PilgrimHulk.h"
+#include "LastJudge.h"
 
 #include "Nyleth.h"
 #include "Trobbio.h"

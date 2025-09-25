@@ -127,7 +127,6 @@
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="Beastfly.cpp" />
-    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Cragglite.cpp" />
     <ClCompile Include="CreateMonster.cpp" />
     <ClCompile Include="ElderPilgrim.cpp" />
@@ -136,6 +135,7 @@
     <ClCompile Include="GroaltheGreat.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="LastClaw.cpp" />
+    <ClCompile Include="LastJudge.cpp" />
     <ClCompile Include="Lavalug.cpp" />
     <ClCompile Include="MassiveMossgrub.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -157,7 +157,6 @@
     <ClInclude Include="Battle.h" />
     <ClInclude Include="BattleManager.h" />
     <ClInclude Include="Beastfly.h" />
-    <ClInclude Include="Boss.h" />
     <ClInclude Include="Cragglite.h" />
     <ClInclude Include="CreateMonster.h" />
     <ClInclude Include="ElderPilgrim.h" />
@@ -166,6 +165,7 @@
     <ClInclude Include="header.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="LastClaw.h" />
+    <ClInclude Include="LastJudge.h" />
     <ClInclude Include="Lavalug.h" />
     <ClInclude Include="MassiveMossgrub.h" />
     <ClInclude Include="Monster.h" />

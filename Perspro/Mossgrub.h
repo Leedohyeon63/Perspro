@@ -4,7 +4,7 @@ class Mossgrub : public Monster
 {
 public:
 	Mossgrub()
-		:Monster("¿Ã≥¢¿Ø√Ê", 60, 10, 1)
+		:Monster("¿Ã≥¢¿Ø√Ê", 60, 8, 1)
 	{
 
 	}

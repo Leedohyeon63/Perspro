@@ -3,6 +3,6 @@
 class Mossmir : public Monster
 {
 public:
-	Mossmir() :Monster("모스미르", 60, 10, 1) {}
+	Mossmir() :Monster("모스미르", 40, 11, 1) {}
 };
 

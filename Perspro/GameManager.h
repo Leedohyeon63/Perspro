@@ -7,6 +7,7 @@
 #include "Monster.h"
 #include "CreateMonster.h"
 #include "BattleManager.h"
+
 #include<random>
 
 class GameManager
@@ -15,16 +16,19 @@ public:
 	void TextRpg();
 	void Nextstage();
 	void BattleEvent(int Stage);
+	void BossBattlevnet(int Stage);
 	GameManager();
 	~GameManager();
 private:
 	bool Isdead = false;
-	int StageTrigger = 1;
+	int StageTrigger = 5;
 	const int MAxstage = 5;
+	bool BossClear = false;
 	string move;
 	Player player;
 	StageMap map;
 	Actor* CurrentMonster = nullptr;
+	Actor* CurrentBoss = nullptr;
 	Inventory inven;
 	Shop shop;
 	BattleManager battleManager;

@@ -57,9 +57,6 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Boss.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Mossgrub.cpp">
       <Filter>몬스터\1스테이지</Filter>
     </ClCompile>
@@ -117,6 +114,9 @@
     <ClCompile Include="BattleManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="LastJudge.cpp">
+      <Filter>몬스터\4스테이지</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -144,9 +144,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Monster.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Boss.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Mosterlist.h">
@@ -205,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="BattleManager.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="LastJudge.h">
+      <Filter>몬스터\4스테이지</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

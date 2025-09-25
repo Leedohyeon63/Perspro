@@ -1,6 +1,7 @@
 #pragma once
 #include"header.h"
 #include"Battle.h"
+class Inventory;
 class Actor : public Battle
 {
 public:
@@ -13,8 +14,14 @@ public:
 	inline bool IsAlive() { return GetHP() > 0; }
 	virtual void AppleyDamge(Battle* InTarget) override;
 	virtual void Takedamge(int InDamge) override;
-	virtual void Useskill(Actor* InTarget);
+	virtual void UseSkill(Actor* InTarget, Inventory* PInventory);
+	virtual void UsePattern(Actor* InTarget, Inventory* PInventory, int InPattern);
 	virtual void ShowInfo() const;
+	void ActorEffects();
+	void ActorHealBlock(int turns);
+	bool IsHealBlocked() const;
+	bool CantHeal = false;
+	int HealBlockedTurns = 0;
 	Actor() : Name(""), ActorHP(0), Actordamge(0), MaxHealth(0), MonsterLevel(0){}
 	Actor(const char* InName, int HP, int Dam,int Level);
 	~Actor();
@@ -29,10 +36,18 @@ public:
 	inline void SetDamge(int Dam)
 	{
 		Actordamge = Dam;
+		if (Actordamge < 0)
+		{
+			Actordamge = 1;
+		}
 	}
 	inline void SetGold(int gold)
 	{
 		Gold = gold;
+		if (Gold < 0)
+		{
+			Gold = 0;
+		}
 	}
 
 protected:
@@ -47,6 +62,11 @@ protected:
 	inline void SetHealing(int heal)
 	{
 		ActorHP += heal;
+		printf("%d 만큼 회복 \n", Getorb());
+		if (ActorHP > MaxHealth)
+		{
+			ActorHP = MaxHealth;
+		}
 	}
 	
 	inline void SetHealth(int InHealth)

@@ -104,6 +104,8 @@ int(*StageMap::Whereis(int Mapnum))[30]
 		return Stage3; 
 	case 4:
 		return Stage4;
+	case 5:
+		return Stage5;
 	default:
 		break;
 	}
@@ -137,6 +139,10 @@ void StageMap::printMap(int Mapnum, int Playerx, int Playery)
 			else if(t == Composition::Potal)
 			{
 				printf("T ");
+			}
+			else if (t == Composition::Boss)
+			{
+				printf("B ");
 			}
 		}
 		printf("\n");
