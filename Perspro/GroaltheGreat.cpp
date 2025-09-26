@@ -25,7 +25,7 @@ void GroaltheGreat::UsePattern(Actor* InTarget, Inventory* PInventory, int InPat
 void GroaltheGreat::Rush(Actor* InTarget, Inventory* PInventory)
 {
 	printf("그롤이 돌진합니다.\n");
-	if (PInventory->FindItem("페이 깃털"))
+	if (PInventory->IsEquip("페이깃털"))
 	{
 		printf("빠르게 돌진을 피합니다.\n");
 		RushDamge = 1;
@@ -36,7 +36,7 @@ void GroaltheGreat::Rush(Actor* InTarget, Inventory* PInventory)
 void GroaltheGreat::Inhale(Actor* InTarget, Inventory* PInventory)
 {
 	printf("그롤이 플레이어를 빨아들입니다.\n");
-	if (PInventory->FindItem("페이 깃털"))
+	if (PInventory->IsEquip("페이깃털"))
 	{
 		printf("빠르게 나왔습니다.\n");
 		InhaleHit = 1;
@@ -50,7 +50,7 @@ void GroaltheGreat::Inhale(Actor* InTarget, Inventory* PInventory)
 void GroaltheGreat::MaggotsTale(Actor* InTarget, Inventory* PInventory)
 {
 	printf("그롤이 구더기 뭉치를 발사합니다.\n");
-	if (PInventory->FindItem("순수의 화환"))
+	if (PInventory->IsEquip("순수의화환"))
 	{
 		printf("구더기를 모두 튕겨냅니다.\n");
 	}
@@ -63,7 +63,7 @@ void GroaltheGreat::MaggotsTale(Actor* InTarget, Inventory* PInventory)
 
 void GroaltheGreat::SoulThrow(Actor* InTarget, Inventory* PInventory)
 {
-	if (IsBerserk() && BerserkeTrigger && !(PInventory->FindItem("순수의 화환")))
+	if (IsBerserk() && BerserkeTrigger && !(PInventory->IsEquip("순수의화환")))
 	{
 		printf("그롤이 분노합니다...\n");
 		SoulThrowDamge *= 3;

@@ -26,7 +26,7 @@ void Trobbio::UsePattern(Actor* InTarget, Inventory* PInventory, int InPattern)
 void Trobbio::Firebomb(Actor* InTarget, Inventory* PInventory)
 {
 	printf("토르비오가 폭탄을 던집니다.\n");
-	if (PInventory->FindItem("용암 종"))
+	if (PInventory->IsEquip("용암의종"))
 	{
 		printf("용암 종이 피해를 감소시킵니다.\n");
 		bombDamge = 10;
@@ -47,7 +47,7 @@ void Trobbio::Tornado(Actor* InTarget, Inventory* PInventory)
 void Trobbio::FireWork(Actor* InTarget, Inventory* PInventory)
 {
 	printf("토르비오가 불꽃을 날립니다.\n");
-	if (PInventory->FindItem("용암 종"))
+	if (PInventory->IsEquip("용암의종"))
 	{
 		printf("용암 종이 피해를 감소시킵니다.\n");
 		FireWorkDamge = 10;
@@ -61,7 +61,7 @@ void Trobbio::FirecrackerAttack(Actor* InTarget, Inventory* PInventory)
 	if (FirecrackerCount == 4)
 	{
 		printf("토르비오가 불꽃놀이를 시작합니다.\n");
-		if (PInventory->FindItem("용암 종"))
+		if (PInventory->IsEquip("용암의종"))
 		{
 			printf("용암 종이 피해를 감소시킵니다.\n");
 			FirecrackerDamge = 30;

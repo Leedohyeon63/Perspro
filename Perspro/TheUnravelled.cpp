@@ -7,10 +7,41 @@ void TheUnravelled::Takedamge(int Dam)
 
 void TheUnravelled::UsePattern(Actor* InTarget, Inventory* PInventory, int InPattern)
 {
-	int Pattern = InPattern % 4;
-	if (IsBerserk())
+	if (IsRage)
 	{
-		printf("풀려난 자가 분노 상태입니다.");
+		if (PInventory != nullptr && !PInventory->FindListItem("화려한 심장"))
+		{
+			printf("불꽃의 힘이 없습니다 풀려난 자의 체력이 늘어납니다..\n");
+			SetMaxHealth(GetMaxHealth() * 2);
+			SetHealth(GetHP() * 2);
+		}
+		if (PInventory != nullptr && !PInventory->FindListItem("숲의 심장"))
+		{
+			printf("자연의 힘이 없습니다 풀려난 자의 공격력이 강해집니다..\n");
+			SetDamge(GetATK() * 3);
+		}
+		if (PInventory != nullptr && !PInventory->FindListItem("역겨운 심장"))
+		{
+			printf("영혼의 힘이 없습니다 풀려난 자의 기술의 데미지가 크게 증가합니다..\n");
+			UnravelledRushDamge = 140;
+			SpearThrowDamge = 170;
+			JudgeDamge = 240;
+			VoltvesselsDamge = 70;
+			VoltvesselsHit = 6;
+			RosaryShootDamge = 100;
+			LightBeamDamge = 300;
+			PurgatoriumDamge = 400;
+		}
+		if (PInventory != nullptr && !PInventory->FindListItem("실로 만든 심장"))
+		{
+			printf("실크의 힘이 없습니다 ");
+		}
+		IsRage = false;
+	}
+	int Pattern = InPattern % 4;
+	if (IsBerserk()|| (PInventory != nullptr && !PInventory->FindListItem("실로 만든 심장")))
+	{
+		printf("풀려난 자가 분노 상태입니다..\n");
 		int Pattern = InPattern % 7;
 	}
 	switch (Pattern)
@@ -116,12 +147,12 @@ void TheUnravelled::LightBeam(Actor* InTarget, Inventory* PInventory)
 void TheUnravelled::Purgatorium(Actor* InTarget, Inventory* PInventory)
 {
 	printf("풀려난 자가 연옥을 열었습니다..\n");
-	if (PInventory->FindItem("연약한 꽃"))
+	if (PInventory->IsEquip("연약한꽃"))
 	{
 		printf("꽃이 열기를 모두 흡수합니다..\n");
 		PurgatoriumDamge = 0;
 	}
-	else if (PInventory->FindItem("용암 종"))
+	else if (PInventory->IsEquip("용암의종"))
 	{
 		printf("용암 종이 피해를 감소시킵니다.\n");
 		PurgatoriumDamge = 100;

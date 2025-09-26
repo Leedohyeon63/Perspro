@@ -8,7 +8,7 @@ void PilgrimHulk::Rolling(Actor* InTarget, Inventory* PInventory)
 {
 	printf("순례자 덩치가 구릅니다.\n");
 	printf("===============================.\n");
-	if (PInventory->FindItem("페이 깃털"))
+	if (PInventory->IsEquip("페이깃털"))
 	{
 		printf("빠른 속도로 피했습니다..\n");
 		RollingHit = 1;

@@ -9,7 +9,7 @@
 #include "BattleManager.h"
 
 #include<random>
-
+//게임의 전반을 담당하는 클래스
 class GameManager
 {
 public:
@@ -21,8 +21,9 @@ public:
 	~GameManager();
 private:
 	bool Isdead = false;
+	bool IsClear = false;
 	int StageTrigger = 1;
-	const int MAxstage = 5;
+	const int MAxstage = 6;
 	bool BossClear = false;
 	string move;
 	Player player;

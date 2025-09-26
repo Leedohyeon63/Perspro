@@ -41,7 +41,7 @@ void MotherSilk::Silkspear(Actor* InTarget, Inventory* PInventory)
 void MotherSilk::ThreadStorm(Actor* InTarget, Inventory* PInventory)
 {
 	printf("실크의 주위에 폭풍이 일어납니다..\n");
-	if (PInventory->FindItem("페이 깃털")&&!IsDamTaken)
+	if (PInventory->IsEquip("페이깃털")&&!IsDamTaken)
 	{
 		printf("빠르게 나왔습니다.\n");
 		ThreadStormHit = 2;

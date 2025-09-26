@@ -31,5 +31,6 @@ private:
     int PurgatoriumDamge = 200;
     bool IsBerserk() { return GetHP() < 1000; }
     bool IsDamTaken = false;
+    bool IsRage = true;
 };
 

@@ -1,27 +1,27 @@
 #include "CreateMonster.h"
-
+//스테이지와 가중치에 따라 몬스터를 생성하는 클래스
 Actor* CreateMonster::SpawnMonster(int stage)
 {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(0, 6);
+    std::uniform_int_distribution<> distrib(0, 6);//0부터 5까지 랜덤
     int monsterType = distrib(gen);
     if (stage == 1)
     {
-        if (monsterType == 0)
+        if (monsterType == 0)//모든 스테이지에서 엘리트 몬스터는 0일때만
         {
             return new MassiveMossgrub();
         }
-        else if(monsterType == 1|| monsterType==3)
+        else if(monsterType == 1|| monsterType==3)//중간 파워 몬스터는 1일때만 or 1이나 3일때만
         {
             return new Mossmir();
         }
-        else
+        else//나머지는 기본 몬스터
         {
             return new Mossgrub();
         }
     }
-    else if (stage == 2)
+    else if (stage == 2)//이하 동문
     {
         if (monsterType == 0)
         {
@@ -70,7 +70,7 @@ Actor* CreateMonster::SpawnMonster(int stage)
 }
 
 Actor* CreateMonster::SpawnBoss(int stage)
-{
+{//스테이지별 보스 생성하는 메소드
     switch (stage)
     {
     case 1:

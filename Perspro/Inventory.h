@@ -3,6 +3,7 @@
 #include "header.h"
 #include "Player.h"
 #include<vector>
+#include <algorithm>
 class Actor;
 class Inventory
 {
@@ -10,18 +11,24 @@ public:
 	void PrintInventory();
 	void UseItem(string Choise, Player& player);
 	void PushItem(string item, string type);
-	bool FindItem(string item);
+	bool IsEquip(string item);
+	bool FindListItem(string item);
 	void DeleteItem(string item);
 	void DeleteConsumablesItem(string item);
+	void DeleteBattleItem(string item);
 	void WhatUse(Player& player);
 	void BattleUse(Player& player);
 	void BossReward(Actor* Boss);
+	void EquipItem();
+	void UnEquipItem();
+	void RecordItem(const std::string& itemName);
+	bool RecordUniqueItem(const std::string& itemName) const;
 protected:
-	int Maxinven = 10;
-	std::vector<string> InventoryList = {"팬던트", "대못", "순수의 화환"};
-	std::vector<string> EquipList = {"팬던트", "대못", "폴립 심장"};
-	std::vector<string> ConsumablesList = {"화려한깃털" ,"자연의정수","영혼주머니","창백한발톱조각" };
-	std::vector<string> BattleList = {"부싯깃"};
+	std::vector<std::string> UniqueItems;
+	std::vector<string> InventoryList = {"팬던트", "대못"};
+	std::vector<string> EquipList = {};
+	std::vector<string> ConsumablesList = {};
+	std::vector<string> BattleList = {};
 	int FeatherATk = 10;
 	int SilkATK = 50;
 	int NatureHealth = 100;

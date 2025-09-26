@@ -1,8 +1,8 @@
 #include "Player.h"
-
-void Player::move(string move, int stage)
+//플레이어의 행동과 상태를 관리하는 클래스
+void Player::move(string move, int stage)//이동을 담당하는 메소드
 {
-	if ((move == "d" || move == "D")&&stagemap.Iswall(stage, PlayerPosx, PlayerPosy, Way::Right))
+	if ((move == "d" || move == "D")&&stagemap.Iswall(stage, PlayerPosx, PlayerPosy, Way::Right))//플레이어 좌표와 이동 방향을 받아 앞이 벽인지 판단
 	{
 		PlayerPosx++;
 	}
@@ -26,7 +26,7 @@ void Player::move(string move, int stage)
 
 
 
-
+//플레이어의 상태(스탯)를 관리하는 메소드
 void Player::PlayerDmagetaken(int Dam)
 {
 	SetDamgetaken(Dam);
