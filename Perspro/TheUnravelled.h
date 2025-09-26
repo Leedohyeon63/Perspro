@@ -14,7 +14,7 @@ public:
     void LightBeam(Actor* InTarget, Inventory* PInventory);
     void Purgatorium(Actor* InTarget, Inventory* PInventory);
     TheUnravelled()
-        :Monster("풀려난 자", 2200, 30, 11)
+        :Monster("풀려난 자", 3000, 30, 11)
     {
     }
     virtual ~TheUnravelled() noexcept override = default;

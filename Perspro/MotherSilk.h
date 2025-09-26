@@ -13,7 +13,7 @@ public:
     void RuneRage(Actor* InTarget, Inventory* PInventory);
     void PaleNails(Actor* InTarget, Inventory* PInventory);
     MotherSilk()
-        :Monster("위대한 어머니 실크", 1500, 10, 9)
+        :Monster("위대한 어머니 실크", 2000, 10, 9)
     {
     }
 private:
