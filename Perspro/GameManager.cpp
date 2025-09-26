@@ -192,4 +192,9 @@ GameManager::~GameManager()
 		delete CurrentMonster;
 		CurrentMonster = nullptr;
 	}
+	if (CurrentBoss != nullptr)
+	{
+		delete CurrentBoss;
+		CurrentBoss = nullptr;
+	}
 }

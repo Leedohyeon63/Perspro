@@ -42,7 +42,7 @@ void TheUnravelled::UsePattern(Actor* InTarget, Inventory* PInventory, int InPat
 	if (IsBerserk()|| (PInventory != nullptr && !PInventory->FindListItem("실로 만든 심장")))
 	{
 		printf("풀려난 자가 분노 상태입니다..\n");
-		int Pattern = InPattern % 7;
+		Pattern = InPattern % 7;
 	}
 	switch (Pattern)
 	{
@@ -100,7 +100,7 @@ void TheUnravelled::Judge(Actor* InTarget, Inventory* PInventory)
 		JudgeDamge /= 2;
 
 	}
-	InTarget->Takedamge(SpearThrowDamge);
+	InTarget->Takedamge(JudgeDamge);
 }
 
 void TheUnravelled::Voltvessels(Actor* InTarget, Inventory* PInventory)

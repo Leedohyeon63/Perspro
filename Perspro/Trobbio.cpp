@@ -67,7 +67,7 @@ void Trobbio::FirecrackerAttack(Actor* InTarget, Inventory* PInventory)
 			FirecrackerDamge = 30;
 		}
 		InTarget->Takedamge(FirecrackerDamge);
-		FirecrackerCount == 0;
+		FirecrackerCount = 0;
 	}
 	else
 	{
